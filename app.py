@@ -187,7 +187,7 @@ def about2(tokens,old_pass):
                  time.sleep(1)
                  tex = status1[random.randint(0,26)]
                  vk.account.saveProfileInfo(first_name = names[random.randint(1,30)],last_name =surnames[random.randint(1,62)],sex = 1,relation = 6,status = tex)
-                 time.sleep(2)
+                 time.sleep(1)
             success_auth = 1
         except:
             pass
