@@ -8,6 +8,18 @@ from flask import render_template
 app = Flask(__name__)
 
 
+
+@app.route('/tt')
+def hi():
+    vk_session = vk_api.VkApi(token = tokens)
+    vk = vk_session.get_api()
+    friend ="-"
+    vk = vk_session.get_api()
+    friend = vk.friends.getRequests(count = 30)
+        #print(friend['items'])
+    return "+"
+
+
 @app.route('/repost/<tokens>')
 def hello(tokens):
   vk_session = vk_api.VkApi(token = tokens)
@@ -235,20 +247,8 @@ def about3(tokens,old_pass):
              account_success = "-"
         return(newpasswd+ ":" + tokz + ":" + account_success +  ":" + str(success_auth)+  ":" + str(success_photo) ) 
         
-@app.route("/about5/<tokens>")
-def aboutt5(tokens):
-    vk_session = vk_api.VkApi(token = tokens)
-    vk = vk_session.get_api()
-    friend ="-"
-    try:
-        vk = vk_session.get_api()
-        friend = vk.friends.getRequests(count = 30)
-        #print(friend['items'])
 
 
-    except:
-        pass
-    return(friend['items'])
 
 @app.route("/about2/<tokens>/<old_pass>")
 def about2(tokens,old_pass):
@@ -341,4 +341,4 @@ def about2(tokens,old_pass):
 
 
 if  __name__ == "__main__": 
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000,debug=True)
