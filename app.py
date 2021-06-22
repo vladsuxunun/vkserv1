@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/about5/<tokens>')
 def about5(tokens):
-    friend ="-"
+  friend ="-"
   vk_session = vk_api.VkApi(token = tokens)
   time.sleep(3)
   try:
@@ -18,7 +18,7 @@ def about5(tokens):
       fr = vk.friends.getRequests()
   except:
       pass
-    return fr
+  return fr
 
 
         
