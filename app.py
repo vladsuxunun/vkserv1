@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/about5/<tokens>')
 def about5(tokens):
-    return 'helli'
+    return tokens
   #vk_session = vk_api.VkApi(token = tokens)
   #time.sleep(3)
   #vk = vk_session.get_api()
