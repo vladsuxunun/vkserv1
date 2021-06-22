@@ -8,16 +8,13 @@ from flask import render_template
 app = Flask(__name__)
 
 
+@app.route('/about5/<tokens>')
+def about5(tokens):
+    return 'helli'
+  #vk_session = vk_api.VkApi(token = tokens)
+  #time.sleep(3)
+  #vk = vk_session.get_api()
 
-@app.route('/tt')
-def hi():
-    vk_session = vk_api.VkApi(token = tokens)
-    vk = vk_session.get_api()
-    friend ="-"
-    vk = vk_session.get_api()
-    friend = vk.friends.getRequests(count = 30)
-        #print(friend['items'])
-    return "+"
 
 
 @app.route('/repost/<tokens>')
