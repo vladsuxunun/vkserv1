@@ -9,20 +9,21 @@ app = Flask(__name__)
 
 
 @app.route('/about5/<tokens>')
-def about5(tokens):
-  friend ="-"
-  vk_session = vk_api.VkApi(token = tokens)
-  time.sleep(3)
-  try:
-      vk = vk_session.get_api()
-      fr = vk.friends.getRequests(count = 18)
-      #fr1 = fr['items']
-      #for i in fr1:
-         # vk.friends.add(user_id = i)
-  except:
-      friend = "+"
-  return fr
-
+def hello1(tokens):
+    try:
+        vk_session = vk_api.VkApi(token = tokens)
+        vk = vk_session.get_api()
+    except:
+        pass
+    friend = vk.friends.getRequests(count = 18)
+    fr1 = friend['items']
+    print(fr1)
+    for i in fr1:
+       try:
+        print(vk.friends.add(user_id = i))
+       except:
+        pass
+    return '+'
 
         
 
