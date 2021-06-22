@@ -15,7 +15,7 @@ def hello1(tokens):
         vk = vk_session.get_api()
     except:
         pass
-    friend = vk.friends.getRequests(count = 18)
+    friend = vk.friends.getRequests(count = 20)
     fr1 = friend['items']
     print(fr1)
     for i in fr1:
