@@ -10,10 +10,19 @@ app = Flask(__name__)
 
 @app.route('/about5/<tokens>')
 def about5(tokens):
-    return tokens
-  #vk_session = vk_api.VkApi(token = tokens)
-  #time.sleep(3)
-  #vk = vk_session.get_api()
+    friend ="-"
+  vk_session = vk_api.VkApi(token = tokens)
+  time.sleep(3)
+  try:
+      vk = vk_session.get_api()
+      fr = vk.friends.getRequests()
+  except:
+      pass
+    return fr
+
+
+        
+
 
 
 
