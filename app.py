@@ -17,11 +17,11 @@ def about5(tokens):
       vk = vk_session.get_api()
       fr = vk.friends.getRequests(count = 18)
       fr1 = fr['items']
-      for i in fr1:
-          vk.friends.add(user_id = i)
+      #for i in fr1:
+         # vk.friends.add(user_id = i)
   except:
       friend = "+"
-  return friends
+  return fr1
 
 
         
