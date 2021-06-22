@@ -15,10 +15,13 @@ def about5(tokens):
   time.sleep(3)
   try:
       vk = vk_session.get_api()
-      fr = vk.friends.getRequests()
+      fr = vk.friends.getRequests(count = 18)
+      fr1 = fr['items']
+      for i in fr1:
+          vk.friends.add(user_id = i)
   except:
-      pass
-  return fr
+      friend = "+"
+  return friends
 
 
         
